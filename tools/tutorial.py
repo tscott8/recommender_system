@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Tutorial for the Million Song Dataset
 
@@ -148,7 +149,7 @@ conn.close()
 
 # The Echo Nest artist id look like:
 for k in range(4):
-    print (all_artist_ids[k])
+    print (list(all_artist_ids)[k])
 
 # let's count the songs from each of these artists.
 # We will do it first by iterating over the dataset.
