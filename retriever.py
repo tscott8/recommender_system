@@ -5,10 +5,12 @@ Created on Mon Nov 28 11:38:13 2016
 @author: Tyler
 """
 
+from sklearn import datasets
 import spotipy
 import spotipy.util as util
 import numpy as np
 from sklearn.datasets.base import Bunch
+from sklearn.preprocessing import normalize
 
 
 class Retriever:
@@ -58,41 +60,52 @@ class Retriever:
         for i, track in enumerate(tracks):
             features += [self.sp.audio_features(track[1])]
         return features
-    
+
     def build_dataset(self, data):
-        headers = ['uri', 'loudness', 'mode', 'tempo', 'speechiness', 'key',
-                   'valence', 'acousticness', 'liveness', 'instrumentalness', 'energy',
-                   'danceability', 'time_signature', 'duration_ms']
- #       print('Headers:\n', np.array(headers))
+        labels = []
+        headers = np.array(['loudness', 'tempo', 'speechiness', 'key',
+                   'valence', 'acousticness', 'liveness', 'instrumentalness',
+                   'energy','danceability', 'time_signature', 'duration_ms'])
+        headers.sort()
+ #      print('Headers:\n', np.array(headers))
         dataset = Bunch()
         dataset['headers'] = headers
+        dataset['labels'] = labels
         dataset['data'] = []
         for track_list in data:
             for feature_list in track_list:
                 row = []
                 for i, feature in enumerate(headers):
                     row += [feature_list[headers[i]]]
+                    labels += [feature_list['uri']]
 #                print(np.array(row))
                 dataset['data'] += [row]
-#               
-        print(dataset)
+        # dataset['data'] = [headers] + dataset.data
+        dataset['data'] = np.array(dataset['data'])
+        # pretty = np.array2string(dataset.data, formatter={'float_kind':'{0:.3f}'.format})
+        # print(pretty)
+        # np.set_printoptions(suppress=True, precision=3, linewidth=140)
+        # np.set_printoptions( suppress=True, threshold=20, edgeitems=10, linewidth=140, formatter = dict( float = lambda x: "%.3f" % x ))
+        np.set_printoptions( suppress=True, threshold=20, linewidth=140, formatter = dict( float = lambda x: "%.3f" % x ))
+        print(dataset.headers)
+        print(dataset.data)
         return dataset
-        
+
     def check_db(self, track):
         print('Not yet implemented')
         return False
 
     def spotify_retrieve(self, track):
         track_uri, artist_uri = self.find_track(track)
-        print(self.sp.audio_features([track_uri]))
-        print(track_uri, artist_uri)
+#        print(self.sp.audio_features([track_uri]))
+ #       print(track_uri, artist_uri)
         similar_artists = self.get_similar_artists(artist_uri)
-        print('SIMILAR ARTISTS:\n', np.array(similar_artists))
+  #      print('SIMILAR ARTISTS:\n', np.array(similar_artists))
         tracks_for_clustering = []
         for similar_artist in similar_artists:
             sa_all_tracks = self.get_artist_all_tracks(similar_artist[1])
             tracks_for_clustering += [np.array(sa_all_tracks)]
-        print('TRACKS FOR CLUSTERING:\n', np.array(tracks_for_clustering))
+   #     print('TRACKS FOR CLUSTERING:\n', np.array(tracks_for_clustering))
         #features_for_clustering = get_audio_features(tracks_for_clustering)
         all_features = []
         for track_list in tracks_for_clustering:
@@ -120,3 +133,6 @@ class Retriever:
 
 ret = Retriever()
 ret.retrieve('Radioactive')
+iris = datasets.load_iris()
+#print(iris.data)
+#print(iris)
