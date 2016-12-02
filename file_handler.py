@@ -3,6 +3,9 @@ import pandas
 
 class FileHandler:
     def __init__(self):
+        if not os.path.isdir("./Database"):
+            os.makedirs("./Database")
+        os.chdir("./Database")
         self.url = './{}/{}.csv'
 
     
@@ -27,7 +30,7 @@ class FileHandler:
 
 
     def identify_artist(self, possible_artists):
-        print("Mutliple files have been found for this song. ")
+        print("Mutliple artists have been found for this song. ")
         for i, artist in enumerate(possible_artists):
             print("[{}] {}".format(i, artist))
         print("[{}] {}".format("X", "None"))
