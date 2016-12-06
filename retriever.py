@@ -11,7 +11,7 @@ import spotipy.util as util
 import numpy as np
 from sklearn.datasets.base import Bunch
 from sklearn.preprocessing import normalize
-
+from file_handler import FileHandler
 
 class Retriever:
 
@@ -30,12 +30,12 @@ class Retriever:
             self.sp = spotipy.Spotify(auth=self.token)
         else:
             print ("Can't get token for", self.username)
-
+        self.fh = FileHandler()
 
     def find_track(self, title):
         result = self.sp.search(q=title, limit=1)['tracks']['items'][0]
         print(result['name'], '-', result['artists'][0]['name'])
-        return result['uri'], result['artists'][0]['uri']
+        return result['uri'], result['artists'][0]['uri'], title, result['artists'][0]['name']
 
     def get_similar_artists(self, artist_uri, sample_size=5):
         # artist = self.sp.artist(artist_uri)
@@ -67,7 +67,6 @@ class Retriever:
                    'valence', 'acousticness', 'liveness', 'instrumentalness',
                    'energy','danceability', 'time_signature', 'duration_ms'])
         headers.sort()
- #      print('Headers:\n', np.array(headers))
         dataset = Bunch()
         dataset['headers'] = headers
         dataset['labels'] = labels
@@ -78,7 +77,6 @@ class Retriever:
                 for i, feature in enumerate(headers):
                     row += [feature_list[headers[i]]]
                     labels += [feature_list['uri']]
-#                print(np.array(row))
                 dataset['data'] += [row]
         # dataset['data'] = [headers] + dataset.data
         dataset['data'] = np.array(dataset['data'])
@@ -92,21 +90,15 @@ class Retriever:
         return dataset
 
     def check_db(self, track):
-        print('Not yet implemented')
-        return False
+        return self.fh.check_for_file(song_title=track)
 
     def spotify_retrieve(self, track):
-        track_uri, artist_uri = self.find_track(track)
-#        print(self.sp.audio_features([track_uri]))
- #       print(track_uri, artist_uri)
+        track_uri, artist_uri, track_name, artist_name = self.find_track(track)
         similar_artists = self.get_similar_artists(artist_uri)
-  #      print('SIMILAR ARTISTS:\n', np.array(similar_artists))
         tracks_for_clustering = []
         for similar_artist in similar_artists:
             sa_all_tracks = self.get_artist_all_tracks(similar_artist[1])
             tracks_for_clustering += [np.array(sa_all_tracks)]
-   #     print('TRACKS FOR CLUSTERING:\n', np.array(tracks_for_clustering))
-        #features_for_clustering = get_audio_features(tracks_for_clustering)
         all_features = []
         for track_list in tracks_for_clustering:
             features = []
@@ -117,22 +109,21 @@ class Retriever:
   #                  features = self.sp.audio_features(features[sample-50:, :sample])
             features = self.sp.audio_features(features)
             all_features += [features]
-        #print(np.array(all_features))
         dataset = self.build_dataset(all_features)
         return dataset
 
     def db_retrieve(self, track):
-        print('Not yet implemented.')
+        track_uri, artist_uri, track_name, artist_name = self.find_track(track)
+        return self.fh.retrieve_file(track_name, artist_name)
 
     def retrieve(self, track):
+        dataset = []
         if self.check_db(track) is True:
-            return self.db_retrieve(track)
+            dataset = self.db_retrieve(track)
         else:
-            return self.spotify_retrieve(track)
-
+            dataset = self.spotify_retrieve(track)
+        # self.fh.write_file()
+        return dataset
 
 ret = Retriever()
 ret.retrieve('Radioactive')
-iris = datasets.load_iris()
-#print(iris.data)
-#print(iris)

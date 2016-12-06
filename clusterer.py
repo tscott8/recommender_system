@@ -22,5 +22,5 @@ similar_songs = [i for i, item in enumerate(k.labels_) if item == cluster_number
 
 print(similar_songs)
 
-# loop through similar_songs and print out the song 
+# loop through similar_songs and print out the song
 #   that is associated with that index
