@@ -86,10 +86,10 @@ class Retriever:
         # np.set_printoptions(suppress=True, precision=3, linewidth=140)
         # np.set_printoptions( suppress=True, threshold=20, edgeitems=10, linewidth=140, formatter = dict( float = lambda x: "%.3f" % x ))
         np.set_printoptions( suppress=True, threshold=20, linewidth=140, formatter = dict( float = lambda x: "%.3f" % x ))
-        print(dataset.headers)
-        print(dataset.data)
-        print(len(dataset.data), len(dataset.labels))
-        print(dataset.labels)
+        # print(dataset.headers)
+        # print(dataset.data)
+        # print(len(dataset.data), len(dataset.labels))
+        # print(dataset.labels)
         return dataset
 
     def check_db(self, track):
@@ -103,7 +103,7 @@ class Retriever:
             sa_all_tracks = self.get_artist_all_tracks(similar_artist[1])
             tracks_for_clustering += [np.array(sa_all_tracks)]
         tracks_for_clustering += [np.array([[track_name, track_uri]])]
-        print(tracks_for_clustering)
+        # print(tracks_for_clustering)
         all_features = []
         all_labels = []
         # print(tracks_for_clustering)
@@ -117,7 +117,7 @@ class Retriever:
   #                  features = self.sp.audio_features(features[sample-50:, :sample])
             features = self.sp.audio_features(features)
             all_features += [features]
-        print(all_labels)
+        # print(all_labels)
         dataset = self.build_dataset(all_features, all_labels)
         return dataset
 
@@ -134,5 +134,5 @@ class Retriever:
         # self.fh.write_file()
         return dataset
 
-ret = Retriever()
-ret.retrieve('Radioactive')
+#ret = Retriever()
+#ret.retrieve('Radioactive')
