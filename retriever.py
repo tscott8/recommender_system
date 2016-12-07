@@ -61,8 +61,8 @@ class Retriever:
             features += [self.sp.audio_features(track[1])]
         return features
 
-    def build_dataset(self, data):
-        labels = []
+    def build_dataset(self, data, labels):
+        # labels = []
         headers = np.array(['loudness', 'tempo', 'speechiness', 'key',
                    'valence', 'acousticness', 'liveness', 'instrumentalness',
                    'energy','danceability', 'time_signature', 'duration_ms'])
@@ -76,10 +76,11 @@ class Retriever:
                 row = []
                 for i, feature in enumerate(headers):
                     row += [feature_list[headers[i]]]
-                    labels += [feature_list['uri']]
+                # labels += [feature_list['uri']]
                 dataset['data'] += [row]
         # dataset['data'] = [headers] + dataset.data
         dataset['data'] = np.array(dataset['data'])
+        dataset['labels'] = np.array(dataset['labels'])
         # pretty = np.array2string(dataset.data, formatter={'float_kind':'{0:.3f}'.format})
         # print(pretty)
         # np.set_printoptions(suppress=True, precision=3, linewidth=140)
@@ -87,6 +88,8 @@ class Retriever:
         np.set_printoptions( suppress=True, threshold=20, linewidth=140, formatter = dict( float = lambda x: "%.3f" % x ))
         print(dataset.headers)
         print(dataset.data)
+        print(len(dataset.data), len(dataset.labels))
+        print(dataset.labels)
         return dataset
 
     def check_db(self, track):
@@ -99,17 +102,23 @@ class Retriever:
         for similar_artist in similar_artists:
             sa_all_tracks = self.get_artist_all_tracks(similar_artist[1])
             tracks_for_clustering += [np.array(sa_all_tracks)]
+        tracks_for_clustering += [np.array([[track_name, track_uri]])]
+        print(tracks_for_clustering)
         all_features = []
+        all_labels = []
+        # print(tracks_for_clustering)
         for track_list in tracks_for_clustering:
             features = []
             for track in track_list:
                 features += [track[1]]
+                all_labels += [track]
 #            for sample in range(len(features)):
  #               if sample % 50 is 0:
   #                  features = self.sp.audio_features(features[sample-50:, :sample])
             features = self.sp.audio_features(features)
             all_features += [features]
-        dataset = self.build_dataset(all_features)
+        print(all_labels)
+        dataset = self.build_dataset(all_features, all_labels)
         return dataset
 
     def db_retrieve(self, track):
