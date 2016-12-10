@@ -16,7 +16,7 @@ data = dataset.data.tolist()
 # get the track ids
 track_ids = dataset.labels.tolist()
 
-k = KMeans(n_clusters=20).fit(data)
+k = KMeans(n_clusters=20, algorithm='elkan', max_iter=1000).fit(data) # 
 
 # the index into data fo the song we are looking for
 index = len(data) - 1
