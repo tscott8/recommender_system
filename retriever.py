@@ -5,13 +5,15 @@ Created on Mon Nov 28 11:38:13 2016
 @author: Tyler
 """
 
-from sklearn import datasets
+import numpy as np
 import spotipy
 import spotipy.util as util
-import numpy as np
+from file_handler import FileHandler
+from sklearn import datasets
 from sklearn.datasets.base import Bunch
 from sklearn.preprocessing import normalize
-from file_handler import FileHandler
+import webbrowser
+
 
 class Retriever:
 
@@ -34,10 +36,12 @@ class Retriever:
 
     def find_track(self, title):
         result = self.sp.search(q=title, limit=1)['tracks']['items'][0]
-        print(result['name'], '-', result['artists'][0]['name'])
+        print(result['name'], '-',result['artists'][0]['name'])
+        webbrowser.open_new_tab(result['preview_url'])
+
         return result['uri'], result['artists'][0]['uri'], title, result['artists'][0]['name']
 
-    def get_similar_artists(self, artist_uri, sample_size=5):
+    def get_similar_artists(self, artist_uri, sample_size=10):
         # artist = self.sp.artist(artist_uri)
         similar_artists = self.sp.artist_related_artists(artist_uri)
         sa = []
@@ -62,7 +66,6 @@ class Retriever:
         return features
 
     def build_dataset(self, data, labels):
-        # labels = []
         headers = np.array(['loudness', 'tempo', 'speechiness', 'key',
                    'valence', 'acousticness', 'liveness', 'instrumentalness',
                    'energy','danceability', 'time_signature', 'duration_ms'])
@@ -76,20 +79,10 @@ class Retriever:
                 row = []
                 for i, feature in enumerate(headers):
                     row += [feature_list[headers[i]]]
-                # labels += [feature_list['uri']]
                 dataset['data'] += [row]
-        # dataset['data'] = [headers] + dataset.data
         dataset['data'] = np.array(dataset['data'])
         dataset['labels'] = np.array(dataset['labels'])
-        # pretty = np.array2string(dataset.data, formatter={'float_kind':'{0:.3f}'.format})
-        # print(pretty)
-        # np.set_printoptions(suppress=True, precision=3, linewidth=140)
-        # np.set_printoptions( suppress=True, threshold=20, edgeitems=10, linewidth=140, formatter = dict( float = lambda x: "%.3f" % x ))
         np.set_printoptions( suppress=True, threshold=20, linewidth=140, formatter = dict( float = lambda x: "%.3f" % x ))
-        # print(dataset.headers)
-        # print(dataset.data)
-        # print(len(dataset.data), len(dataset.labels))
-        # print(dataset.labels)
         return dataset
 
     def check_db(self, track):
@@ -133,6 +126,5 @@ class Retriever:
             dataset = self.spotify_retrieve(track)
         # self.fh.write_file()
         return dataset
-
 #ret = Retriever()
 #ret.retrieve('Radioactive')

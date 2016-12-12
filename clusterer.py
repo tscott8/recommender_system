@@ -1,24 +1,24 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from retriever import Retriever
+from sklearn import metrics
 from sklearn import datasets
 from sklearn.cluster import KMeans
-from sklearn.datasets.base import Bunch
-from sklearn.preprocessing import normalize
-import pandas as pd
-import numpy as np
-from retriever import Retriever
-import matplotlib.pyplot as plt
-from sklearn import metrics
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import scale
+from sklearn.datasets.base import Bunch
+from sklearn.preprocessing import normalize
 
 class Clusterer:
-    def __init__(self, track_name='Radioactive'):
-        self.ret = Retriever()
+    def __init__(self, ret=Retriever(), track_name='Radioactive'):
+        self.ret = ret
         self.dataset = self.ret.retrieve(track_name)
         # get the data set
         self.data = self.dataset.data.tolist()
         # get the track ids
         self.track_ids = self.dataset.labels.tolist()
-        self.k =  KMeans(n_clusters=10, algorithm='elkan', max_iter=1000).fit(self.data)
+        self.k =  KMeans(init='k-means++', n_clusters=10, algorithm='auto').fit(self.data)
         np.set_printoptions(threshold=np.nan)
 
     def get_target_cluster(self):
@@ -46,17 +46,6 @@ class Clusterer:
             songs = [self.track_ids[i] for i in songs_index]
             clusters[i] = [songs]
         return clusters
-    # def plot_clusters(self):
-    #     clusters = self.gather_clusters()
-    #     # print(self.k.labels_)
-    #     # print(self.k.cluster_centers_)
-    #     # print(self.k.n_clusters)
-    #     # print(self.k.verbose)
-    #
-    #     # create an obj of clusters
-    #     print(clusters)
-    #     # plt.plot(self.k.labels_)
-    #     # plt.show()
 
     def plot_clusters(self):
         data = scale(self.dataset.data)
@@ -64,12 +53,11 @@ class Clusterer:
         n_digits = len(np.unique(self.track_ids))
         labels = self.track_ids
         reduced_data = PCA(n_components=2).fit_transform(data)
-        kmeans = KMeans(init='k-means++', n_clusters=10,algorithm='elkan', max_iter=1000)
+        kmeans = KMeans(init='k-means++', n_clusters=20, algorithm='auto')
         kmeans.fit(reduced_data)
         # Step size of the mesh. Decrease to increase the quality of the VQ.
         h = .02     # point in the mesh [x_min, x_max]x[y_min, y_max].
         # Plot the decision boundary. For that, we will assign a color to each
-        print(reduced_data)
         x_min, x_max = reduced_data[:, 0].min() - 1, reduced_data[:, 0].max() + 1
         y_min, y_max = reduced_data[:, 1].min() - 1, reduced_data[:, 1].max() + 1
         xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
@@ -98,37 +86,7 @@ class Clusterer:
         plt.yticks(())
         plt.show()
 
-# ret = Retriever()
-# dataset = ret.retrieve('Radioactive')
-#
-# # get the data set
-# data = dataset.data.tolist()
-#
-# # get the track ids
-# track_ids = dataset.labels.tolist()
-#
-# k = KMeans(n_clusters=20, algorithm='elkan', max_iter=1000).fit(data) #
-#
-# # the index into data fo the song we are looking for
-# index = len(data) - 1
-#
-# cluster_number = k.labels_[index]
-#
-# # get the index of each item in the cluster
-# similar_songs_index = [i for i, item in enumerate(k.labels_) if item == cluster_number]
-#
-# #print(similar_songs_index)
-#
-# # loop through similar_songs and print out the song
-# #   that is associated with that index
-# similar_songs = [track_ids[i] for i in similar_songs_index]
-# del similar_songs[-1]
-#
-# print("Similar Songs")
-# for x in similar_songs:
-# 	print(x)
 
-
-c = Clusterer()
-print(c.get_target_cluster())
-c.plot_clusters()
+# c = Clusterer()
+# print(c.get_target_cluster())
+# c.plot_clusters()
