@@ -38,7 +38,6 @@ class Retriever:
         result = self.sp.search(q=title, limit=1)['tracks']['items'][0]
         print(result['name'], '-',result['artists'][0]['name'])
         webbrowser.open_new_tab(result['preview_url'])
-
         return result['uri'], result['artists'][0]['uri'], title, result['artists'][0]['name']
 
     def get_similar_artists(self, artist_uri, sample_size=10):
@@ -88,6 +87,28 @@ class Retriever:
     def check_db(self, track):
         return self.fh.check_for_file(song_title=track)
 
+    def batch_audio_features(self,track_lists):
+        all_ids = []
+        all_labels = []
+        all_features = []
+        feature_sets = []
+        for track_list in track_lists:
+            for track in track_list:
+               all_labels += [track]
+               all_ids += [track[1]]
+#        all_tracks_set = set(all_tracks)
+ #       print(all_tracks_set)
+        feature_sets = []
+        while len(all_ids) > 50 :
+            feature_sets += [all_ids[:50]]
+            print(len(all_ids))
+            del all_ids[:50]
+        feature_sets += [all_ids[:]]
+        
+        for feature_set in feature_sets:
+            all_features += [self.sp.audio_features(feature_set)]
+        return all_features, all_labels
+        
     def spotify_retrieve(self, track):
         track_uri, artist_uri, track_name, artist_name = self.find_track(track)
         similar_artists = self.get_similar_artists(artist_uri)
@@ -96,22 +117,27 @@ class Retriever:
             sa_all_tracks = self.get_artist_all_tracks(similar_artist[1])
             tracks_for_clustering += [np.array(sa_all_tracks)]
         tracks_for_clustering += [np.array([[track_name, track_uri]])]
-        # print(tracks_for_clustering)
-        all_features = []
-        all_labels = []
-        # print(tracks_for_clustering)
-        for track_list in tracks_for_clustering:
-            features = []
-            for track in track_list:
-                features += [track[1]]
-                all_labels += [track]
-#            for sample in range(len(features)):
- #               if sample % 50 is 0:
-  #                  features = self.sp.audio_features(features[sample-50:, :sample])
-            features = self.sp.audio_features(features)
-            all_features += [features]
+#        print(len(tracks_for_clustering))
+        all_features, all_labels = self.batch_audio_features(tracks_for_clustering)
+        #print(np.array(all_features))
+#        all_features = []
+#        all_labels = []
+#        for track_list in tracks_for_clustering:
+#            print(set(track_list))
+#            features = []
+#            for track in track_list:
+#                features += [track[1]]
+#                all_labels += [track]
+##            for sample in range(len(features)):
+##                if sample % 50 is 0:
+##                    features = self.sp.audio_features([features[:sample-50], features[sample+50:]])
+##                    all_features += [features]
+#            print(len(features))
+#            features = self.sp.audio_features(features)
+#            all_features += [features]
         # print(all_labels)
         dataset = self.build_dataset(all_features, all_labels)
+        np.set_printoptions(threshold=np.nan)
         return dataset
 
     def db_retrieve(self, track):
@@ -126,5 +152,8 @@ class Retriever:
             dataset = self.spotify_retrieve(track)
         # self.fh.write_file()
         return dataset
+#
 #ret = Retriever()
-#ret.retrieve('Radioactive')
+#dataset = ret.retrieve('Radioactive')
+#print(len(dataset.labels), dataset.labels)
+#print(len(dataset.data), dataset.data)
