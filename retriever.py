@@ -9,9 +9,7 @@ import numpy as np
 import spotipy
 import spotipy.util as util
 from file_handler import FileHandler
-from sklearn import datasets
 from sklearn.datasets.base import Bunch
-from sklearn.preprocessing import normalize
 import webbrowser
 
 
@@ -48,7 +46,7 @@ class Retriever:
             sa += [[artist['name'], artist['uri']]]
         return sa[:sample_size]
 
-    def get_artist_all_tracks(self, artist_uri, sample_size=5):
+    def get_artist_all_tracks(self, artist_uri, sample_size=10):
         artist_albums = self.sp.artist_albums(artist_uri)
         all_tracks = []
         for album in artist_albums['items'][:sample_size]:
@@ -98,13 +96,12 @@ class Retriever:
                all_ids += [track[1]]
 #        all_tracks_set = set(all_tracks)
  #       print(all_tracks_set)
+        print('Number of songs to cluster:',len(all_ids))
         feature_sets = []
         while len(all_ids) > 50 :
             feature_sets += [all_ids[:50]]
-            print(len(all_ids))
             del all_ids[:50]
-        feature_sets += [all_ids[:]]
-        
+        feature_sets += [all_ids[:]]    
         for feature_set in feature_sets:
             all_features += [self.sp.audio_features(feature_set)]
         return all_features, all_labels
@@ -119,23 +116,6 @@ class Retriever:
         tracks_for_clustering += [np.array([[track_name, track_uri]])]
 #        print(len(tracks_for_clustering))
         all_features, all_labels = self.batch_audio_features(tracks_for_clustering)
-        #print(np.array(all_features))
-#        all_features = []
-#        all_labels = []
-#        for track_list in tracks_for_clustering:
-#            print(set(track_list))
-#            features = []
-#            for track in track_list:
-#                features += [track[1]]
-#                all_labels += [track]
-##            for sample in range(len(features)):
-##                if sample % 50 is 0:
-##                    features = self.sp.audio_features([features[:sample-50], features[sample+50:]])
-##                    all_features += [features]
-#            print(len(features))
-#            features = self.sp.audio_features(features)
-#            all_features += [features]
-        # print(all_labels)
         dataset = self.build_dataset(all_features, all_labels)
         np.set_printoptions(threshold=np.nan)
         return dataset
