@@ -136,7 +136,7 @@ class Retriever:
         # get all the tracks for all the artists to do all the things!
         tracks_for_clustering = []
         for i,similar_artist in enumerate(similar_artists):
-            print(str(i)+'. '+similar_artist[0])
+            print(str(i+1)+'. '+similar_artist[0])
             sa_all_tracks = self.get_artist_all_tracks(similar_artist[1])
             tracks_for_clustering += [np.array(sa_all_tracks)]
 

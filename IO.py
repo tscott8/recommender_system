@@ -26,7 +26,9 @@ def output_recommendations(source, filename, tracks):
         print ('track:', track['name'], '-', track['album']['artists'][0]['name'], file=fout)
         print ('preview:', track['preview_url'])
         print ('preview:', track['preview_url'], file=fout)
-        webbrowser.open_new_tab(track['preview_url'])
+        preview_url = track['preview_url']
+        if preview_url:
+            webbrowser.open_new_tab(preview_url)
         print ('full:', 'https://play.spotify.com/track/'+ track['id'])
         print ('full:', 'https://play.spotify.com/track/'+ track['id'], file=fout)
         print ('cover art:', track['album']['images'][0]['url'])
@@ -34,7 +36,7 @@ def output_recommendations(source, filename, tracks):
         print()
         print('', file=fout)
     fout.close()
-    print('Track recommendations saved to ./Database/recommendations_'+track_name+'.txt')
+    print('Track recommendations saved to ./Database/'+filename)
     print()
 
 # compare to the recommended tracks given from spotify
