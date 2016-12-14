@@ -41,7 +41,6 @@ def output_recommendations(source, filename, tracks):
 
 # compare to the recommended tracks given from spotify
 spot_tracks = c.ret.spot_reccomendations(track_name)
-print(spot_tracks)
 output_recommendations(source='Shift',
                        filename='shift_recommendations_'+track_name+'.txt',
                        tracks=shift_tracks)

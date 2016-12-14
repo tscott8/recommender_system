@@ -1,30 +1,31 @@
-track: Kraken - Knife Party
-preview: https://p.scdn.co/mp3-preview/0ef95162d81d8be59c01d803399c0bd2a1439b18?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/520GQFgzhdkCYEhRqq52wc
-cover art: https://i.scdn.co/image/239b395d3e5995045a08d02bde481c3861a3597d
+track: Dancing with the Devil - Krewella
+preview: https://p.scdn.co/mp3-preview/36ba8ed69184987a620f1602cca2512d4caa2537?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/1QmIjmY8L4r8HEJvlZNDyi
+cover art: https://i.scdn.co/image/1537253c1da10ab1429090cbc6fe0d3c555743ad
 
-track: Weaponize - Pegboard Nerds
-preview: https://p.scdn.co/mp3-preview/50d00533f9a5e95bcee0aa3649335607a0452d37?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/759ulXBkfJ0CuGTekjDxBF
-cover art: https://i.scdn.co/image/41dc6758853c5fe40e4372b396214d82b42f0bc8
+track: International Anthem - Doctor P
+preview: https://p.scdn.co/mp3-preview/50c3e8963d26097a468e2112eb6b9dfa641f8227?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/4RhqzzDMcbTM2LHWSX0k98
+cover art: https://i.scdn.co/image/be3d41fc3b2dde7974603b3ffc13f45e9764df07
 
-track: Fully Blown (feat. Snak The Ripper) - Datsik
-preview: https://p.scdn.co/mp3-preview/467c0753c3617cda35c9794d8318e41e44cebeca?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/4JzDSfwIIwQqmtyrMAZ1o9
-cover art: https://i.scdn.co/image/912efba61b021678b8a0c912dd69035f68a2c337
+track: Sleaze - feat. Mistajam - Knife Party
+preview: https://p.scdn.co/mp3-preview/329e1462fb72a6474b3784dcb181062aee2a5eac?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/3gOESsDWZiDbVukRuVY8o4
+cover art: https://i.scdn.co/image/77ec3b49d6d319ef5e2935bd18aa2d7ca4f80070
 
-track: Nope (feat. ShayGray) - Borgore
-preview: https://p.scdn.co/mp3-preview/68b64617e131589e5955093f10ce12119fbac2a7?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/0eEvrc5S2BNnHdhUooBVdj
-cover art: https://i.scdn.co/image/f04686c7e5eaa91b4ac9195d38772fbc5bec95a8
+track: La Lune - Madeon
+preview: https://p.scdn.co/mp3-preview/6fe270398ba0a769a38e75c2b24fc8dca9f10d90?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/1UCDE2UIE5cC6B1o0nsrSv
+cover art: https://i.scdn.co/image/41fa5c07121f5b6cc7d0eac34933ed0722c7dc1c
 
-track: Tetris - Doctor P
-preview: https://p.scdn.co/mp3-preview/3883f43919c67752fa322273595e4d3a4b7f7fb5?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/4SCt2d0kZk8VsbVa78otYR
-cover art: https://i.scdn.co/image/0e98999126407ff71f295750890abfeaae162e4a
+track: Immunity - Original Mix - Zomboy
+preview: https://p.scdn.co/mp3-preview/2418d0c2bbcb18479d2fd3d7164c8f614ab2214f?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/209Ua9mqTkS21uWiTzVZBJ
+cover art: https://i.scdn.co/image/25bc58e803a2e19e9fcceeb01290492d611c0f4a
 
-track: Granite - Pendulum
-preview: https://p.scdn.co/mp3-preview/f8f327b258b1f5d6108d574fdc8091f2450d71f1?cid=39af097001da491989713c62c34bc5f5
+track: Liar feat. Hannah Juliano - Original Mix - Popeska
+preview: None
+d574fdc8091f2450d71f1?cid=39af097001da491989713c62c34bc5f5
 full: https://play.spotify.com/track/3aiycOKS6P30BnR7dUfrnA
 cover art: https://i.scdn.co/image/f2014c8fb1fee180268fe6a0bb34e6407a8f308e
 
