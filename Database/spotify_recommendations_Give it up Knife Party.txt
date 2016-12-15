@@ -1,101 +1,100 @@
-track: Dancing with the Devil - Krewella
-preview: https://p.scdn.co/mp3-preview/36ba8ed69184987a620f1602cca2512d4caa2537?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/1QmIjmY8L4r8HEJvlZNDyi
-cover art: https://i.scdn.co/image/1537253c1da10ab1429090cbc6fe0d3c555743ad
-
-track: International Anthem - Doctor P
-preview: https://p.scdn.co/mp3-preview/50c3e8963d26097a468e2112eb6b9dfa641f8227?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/4RhqzzDMcbTM2LHWSX0k98
-cover art: https://i.scdn.co/image/be3d41fc3b2dde7974603b3ffc13f45e9764df07
-
-track: Sleaze - feat. Mistajam - Knife Party
-preview: https://p.scdn.co/mp3-preview/329e1462fb72a6474b3784dcb181062aee2a5eac?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/3gOESsDWZiDbVukRuVY8o4
-cover art: https://i.scdn.co/image/77ec3b49d6d319ef5e2935bd18aa2d7ca4f80070
-
-track: La Lune - Madeon
-preview: https://p.scdn.co/mp3-preview/6fe270398ba0a769a38e75c2b24fc8dca9f10d90?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/1UCDE2UIE5cC6B1o0nsrSv
-cover art: https://i.scdn.co/image/41fa5c07121f5b6cc7d0eac34933ed0722c7dc1c
-
-track: Immunity - Original Mix - Zomboy
-preview: https://p.scdn.co/mp3-preview/2418d0c2bbcb18479d2fd3d7164c8f614ab2214f?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/209Ua9mqTkS21uWiTzVZBJ
-cover art: https://i.scdn.co/image/25bc58e803a2e19e9fcceeb01290492d611c0f4a
-
-track: Liar feat. Hannah Juliano - Original Mix - Popeska
-preview: None
-d574fdc8091f2450d71f1?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/3aiycOKS6P30BnR7dUfrnA
-cover art: https://i.scdn.co/image/f2014c8fb1fee180268fe6a0bb34e6407a8f308e
-
-track: EDM Trend Machine - Knife Party
-preview: https://p.scdn.co/mp3-preview/8daba4c8391c909c402689564694ef208b0e656a?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/1DkETKf1HkXwPDqdGaMThr
+track: Resistance - Knife Party
+preview: https://p.scdn.co/mp3-preview/3f4e1d4e5456f015158c6998dedefcf487c1999c?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/51JVX9LcPPpHedq6FfnCAG
 cover art: https://i.scdn.co/image/66612a18d3807d08d4f89db7773b651b964a56c8
 
-track: Drunk All the Time - Dillon Francis
-preview: https://p.scdn.co/mp3-preview/0a87269d417c712aadbe5fffc4af46b1e78054b7?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/1wTx8XqC5HnsppDY3sWWaE
+track: Tidal Wave - Sub Focus
+preview: https://p.scdn.co/mp3-preview/8f602e2271feb89cc5e14f580b30f0060642be4b?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/3NKLPcvDM0pefpLNcmui2W
+cover art: https://i.scdn.co/image/51099d6971714941a4444dc95eba56dbf948635d
+
+track: Doomsday - NERO
+preview: https://p.scdn.co/mp3-preview/590ba3bb54281844f1b54092e5d005c32db62038?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/47r2YKldN36ykegWkciO0E
+cover art: https://i.scdn.co/image/d04493338545713bc3b6a811f3b2cc2c47f38d7d
+
+track: Africa - Excision
+preview: https://p.scdn.co/mp3-preview/c3c7b4cb2bd676d7a6adf3d23c142bdc9ca87d4b?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/259Aji7f4RgXz5E9vKZruM
+cover art: https://i.scdn.co/image/8e5857084cbdf021231fa9bbecb5c47d0e0228c2
+
+track: Love in the Middle of a Firefight - Dillon Francis
+preview: https://p.scdn.co/mp3-preview/2fde1ba6d70fc47fd1ccb3053b947674ab325df3?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/21AHQlJa5Q0s1Jx2PeulUD
 cover art: https://i.scdn.co/image/ff3d65d3d2e007e719a3f293da4b97749f7d6c57
 
-track: Feel Like This - Popeska
-preview: https://p.scdn.co/mp3-preview/a4b6f927927c6649cabd0d023568398aacda2257?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/1QLp12FowjbMuLz7jbce5Z
-cover art: https://i.scdn.co/image/4b117dae1232967574e3b493ced3acf45daf4711
-
-track: Killin' It - Krewella
-preview: https://p.scdn.co/mp3-preview/a3c20115789d8dbda64c62a5cc7c1b7ed0b31453?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/3rHFo3c176QQnZ3Ucdbp21
-cover art: https://i.scdn.co/image/976e0c705d4d57a3d7897f47eb6ce033ba6a390c
+track: Escape - Netsky
+preview: https://p.scdn.co/mp3-preview/a0f373301ad5d7cbd9d7fa6cd588820b56fe6d56?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/2XyOEMLWPvKYH8GSBJoPGo
+cover art: https://i.scdn.co/image/350f02d6c3b06fa1c1484cd17c13f29f5c51d996
 
 track: Internet Friends - Knife Party
 preview: https://p.scdn.co/mp3-preview/1ea3742f2fac20876836885acdbe238dcf2ad61c?cid=39af097001da491989713c62c34bc5f5
 full: https://play.spotify.com/track/5qFL2uwfnGU8FccwLMgPNQ
 cover art: https://i.scdn.co/image/3322ed7441cf87816347082c86432880f5b35c29
 
-track: Fellow Feeling - Porter Robinson
-preview: https://p.scdn.co/mp3-preview/a6d09eb020dbe3fc1cf57c0d2cd5aa2d9ff571c8?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/2JgbGCxtzRp6wL5H1DgxV7
-cover art: https://i.scdn.co/image/3379f5006d27b8eb33d12b256d0373d53d85325f
+track: Dancing with the Devil - Krewella
+preview: https://p.scdn.co/mp3-preview/36ba8ed69184987a620f1602cca2512d4caa2537?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/1QmIjmY8L4r8HEJvlZNDyi
+cover art: https://i.scdn.co/image/1537253c1da10ab1429090cbc6fe0d3c555743ad
 
-track: Hustle Hard (feat. Trinidad Jame$) - Original Mix - Dirtyphonics
-preview: https://p.scdn.co/mp3-preview/cbdef05a97fb770fd5726eec7e5e285b3bc4ace1?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/5rKuw5bvQIOL8ciejl9MBe
-cover art: https://i.scdn.co/image/630222dcb63e2940c7161fb51279846c25c4c59e
+track: Invaders - Zomboy
+preview: https://p.scdn.co/mp3-preview/ef6192076ae27b54de4535d73009e1e592815c3d?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/1aIjVVY1Q8lnLJxOZCNe9n
+cover art: https://i.scdn.co/image/7f3f7b0c2a27db2def5f8f580d28c168f7d36a66
 
-track: Feel Alive - Modestep
-preview: https://p.scdn.co/mp3-preview/f94a3a06d6e2a0984c4adccf56f87bfbcd7d96da?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/0RagUsBjLx33CuonCEpsZ0
-cover art: https://i.scdn.co/image/61d16f8faec7e07d08885e624114b1954c1d32dc
+track: Too Young - Zeds Dead
+preview: https://p.scdn.co/mp3-preview/891137a80c2c91ec07bca4e439fbeddb23e2f731?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/6JkWfk9MzaBbZtkU12lI53
+cover art: https://i.scdn.co/image/f6831d8835cbaed41354effd68fd0e766058d683
 
-track: Play Hard - Krewella
-preview: https://p.scdn.co/mp3-preview/d23e34efcd54798e7db726304e0d689985450974?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/1fXmeYsGbs8Mtp6ozgzB8r
-cover art: https://i.scdn.co/image/976e0c705d4d57a3d7897f47eb6ce033ba6a390c
+track: Hold Your Colour - Pendulum
+preview: https://p.scdn.co/mp3-preview/55c0590cb32cb906a3b39691df7c4859e951404c?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/2pZXlPFnqc1uqEKFE7SjwQ
+cover art: https://i.scdn.co/image/245bd6a9355b449884b3171241c36ee167463247
 
-track: #shutyourtrap - Klaypex
-preview: https://p.scdn.co/mp3-preview/a34ddf96c8a7eb10e7fa4ce4310d2760a36f6c43?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/0rWRm0BUgUsF85eMMctYMq
-cover art: https://i.scdn.co/image/d700280798e4875a227123b18f1160d607e62dcc
+track: Rise & Fall (feat. Krewella) - Adventure Club
+preview: https://p.scdn.co/mp3-preview/c7f727fff14ff18652d5badd73654ade332acb92?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/5yQmKyKEdjtxFDPIK9mFLn
+cover art: https://i.scdn.co/image/e154a4319a81af3fddf09ea4efc6e33f5715f463
 
-track: PLUR Police - Knife Party
-preview: https://p.scdn.co/mp3-preview/08c70090d4339333cf1c44dd2bb251d36cf95ecc?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/3VAHLQPmUOa751DklRAF5o
-cover art: https://i.scdn.co/image/239b395d3e5995045a08d02bde481c3861a3597d
+track: Get By - Various Artists
+preview: https://p.scdn.co/mp3-preview/60b5de6a5c92398367766c0f1090c9813a7db952?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/59qiaXIrZMvor2T7fkupLp
+cover art: https://i.scdn.co/image/0bc776ae492ee29cf1e8671e80789e25625ea6b6
 
-track: One Last Night On Earth - Speaker Of The House Remix - Dada Life
-preview: https://p.scdn.co/mp3-preview/fc8a5602e2d3cda32e91c8aa45cf5526209fe8d1?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/6Zjs6nPrDHmKvAUw80FJH6
-cover art: https://i.scdn.co/image/3a86f47f118547e132981d67124b7ba7ca5676e6
+track: Deeper Love - Jauz
+preview: https://p.scdn.co/mp3-preview/f095fd2aa23a5005ffca08f52b14f2853eabc664?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/0Brdql92IAGPFfdTmxeAmk
+cover art: https://i.scdn.co/image/6a71880bf0cbe69a4957e6cab0121f0d71377040
 
-track: Cold Blooded - Datsik
-preview: https://p.scdn.co/mp3-preview/e1212b052e4945224bf0d2d61f033e0593ad1b7f?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/0jyUPFTcpxsEQEs2DpbKfW
-cover art: https://i.scdn.co/image/0060b17c1475a3c400662364fdcb8e7a34148993
+track: The Devil's Den - Skrillex
+preview: https://p.scdn.co/mp3-preview/c7c572884235523468501aa18fcf5dc552ac7e38?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/687RRToOFAtpqZRzmbhGtu
+cover art: https://i.scdn.co/image/695dfa63a47c7db21c0124f1d598d54058063b94
 
-track: Dimemories - Zeds Dead
-preview: https://p.scdn.co/mp3-preview/5d8657608a3f4c052123eb0e97e035330889a2a4?cid=39af097001da491989713c62c34bc5f5
-full: https://play.spotify.com/track/0wbBGWS3zYVuqRK8JmuMXe
-cover art: https://i.scdn.co/image/24a8455fc45b7c19cadd8aa6b2075a64966887ab
+track: Boss Mode - Knife Party
+preview: https://p.scdn.co/mp3-preview/028f842bab3ba90b339fa681e9dab95059b9f4e5?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/1ltFgxgeQCd8z6BPRmcNxb
+cover art: https://i.scdn.co/image/66612a18d3807d08d4f89db7773b651b964a56c8
+
+track: GUD VIBRATIONS - NGHTMRE
+preview: https://p.scdn.co/mp3-preview/b29796ac241e6ea2581ad05c10cc49957d3039e5?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/2BVUOGciUUUqOPSLtHwLGp
+cover art: https://i.scdn.co/image/c05a08c2b9a69ae433bdb8c8b9c5a68935032d7c
+
+track: Make It Rain - Delta Heavy
+preview: None
+full: https://play.spotify.com/track/0Lt4DQvTg5edwCkQG9H8Dg
+cover art: https://i.scdn.co/image/e053c22087afd8e3f2822e5939674be9ba8593cb
+
+track: 9,000 Miles - Pendulum
+preview: https://p.scdn.co/mp3-preview/94fc7eb12d3ed57d1d77322ead03a33e8afb1694?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/10s9tSE1e8RXSufhzw9Aw3
+cover art: https://i.scdn.co/image/f2014c8fb1fee180268fe6a0bb34e6407a8f308e
+
+track: Give & Take - Netsky
+preview: https://p.scdn.co/mp3-preview/3ef36d112837bb9c7319a7661855e7adf507c31e?cid=39af097001da491989713c62c34bc5f5
+full: https://play.spotify.com/track/1gPYCeEm9TmcSv0DHGeaDR
+cover art: https://i.scdn.co/image/2232e0415922030aaadfd3cc0f664537dea0acd8
 

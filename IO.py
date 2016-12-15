@@ -44,7 +44,7 @@ spot_tracks = c.ret.spot_reccomendations(track_name)
 output_recommendations(source='Shift',
                        filename='shift_recommendations_'+track_name+'.txt',
                        tracks=shift_tracks)
-output_recommendations(source='Spotify',
-                       filename='spotify_recommendations_'+track_name+'.txt',
-                       tracks=spot_tracks)    
+#output_recommendations(source='Spotify',
+#                       filename='spotify_recommendations_'+track_name+'.txt',
+ #                      tracks=spot_tracks)    
     

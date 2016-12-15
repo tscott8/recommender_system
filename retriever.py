@@ -37,7 +37,7 @@ class Retriever:
         result = self.sp.search(q=title, limit=1)['tracks']['items'][0]
         return title, result['uri'], result['artists'][0]['name'], result['artists'][0]['uri'], result['preview_url']
 
-    def get_similar_artists(self, artist_uri, sample_size=10):
+    def get_similar_artists(self, artist_uri, sample_size=20):
         # artist = self.sp.artist(artist_uri)
         # get all related artists to the one in question
         similar_artists = self.sp.artist_related_artists(artist_uri)
@@ -46,7 +46,7 @@ class Retriever:
             sa += [[artist['name'], artist['uri']]]
         return sa[:sample_size]
 
-    def get_artist_all_tracks(self, artist_uri, sample_size=10):
+    def get_artist_all_tracks(self, artist_uri, sample_size=20):
         # get all of the albums of each artist
         artist_albums = self.sp.artist_albums(artist_uri)
         # then get all the tracks in each of those albums
@@ -64,6 +64,15 @@ class Retriever:
         for i, track in enumerate(tracks):
             features += [self.sp.audio_features(track[1])]
         return features
+        
+    def prune_dataset(self, dataset):
+        for i, item in enumerate(dataset.data):
+            if any(x is None for x in item):
+                print(item)
+                del dataset.data[i]
+                del dataset.labels[i]
+        return dataset
+                    
 
     def build_dataset(self, data, labels):
         # build an array of the features we want to use for clustering
@@ -84,6 +93,11 @@ class Retriever:
                 for i, feature in enumerate(headers):
                     row += [feature_list[headers[i]]]
                 dataset['data'] += [row]
+                
+        # remove bad data
+        # print('pre prune', len(dataset.data))
+        dataset = self.prune_dataset(dataset)
+        # print('post prune', len(dataset.data))
         # make them nice np.arrays for printing
         dataset['data'] = np.array(dataset['data'])
         dataset['labels'] = np.array(dataset['labels'])
@@ -123,6 +137,7 @@ class Retriever:
             all_features += [self.sp.audio_features(feature_set)]
         return all_features, all_labels
 
+  
     def spotify_retrieve(self, track):
         # get the track data
         track_name, track_uri, artist_name, artist_uri, preview_url = self.find_track(track)
@@ -177,7 +192,7 @@ class Retriever:
         return tracks
 
 # testing stuff...
-# ret = Retriever()
-# dataset = ret.retrieve('Radioactive')
-# print(len(dataset.labels), dataset.labels)
-# print(len(dataset.data), dataset.data)
+#ret = Retriever()
+#dataset = ret.retrieve('Radioactive')
+#print(len(dataset.labels))#, dataset.labels)
+#print(len(dataset.data))#, dataset.data)
